@@ -1,43 +1,42 @@
 {
-  "name": "client",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@material-ui/core": "^4.1.3",
-    "@material-ui/icons": "^4.2.1",
-    "bootstrap": "^4.3.1",
-    "mdbootstrap": "^4.8.3",
-    "node-sass": "^4.12.0",
-    "react": "^16.8.6",
-    "react-bootstrap": "^1.0.0-beta.12",
-    "react-dom": "^16.8.6",
-    "react-redux": "^7.1.0",
-    "react-router-dom": "^5.0.1",
-    "react-scripts": "3.0.1",
-    "redux": "^4.0.1",
-    "redux-devtools-extension": "^2.13.8",
-    "redux-thunk": "^2.3.0"
-  },
+  "name": "stock-market-simulator",
+  "version": "1.0.0",
+  "description": "The simulator app for Indian stock market",
+  "main": "index.js",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "node index.js",
+    "test": "mocha",
+    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build",
+    "build-client": "cd client && npm install --only=dev && npm install && npm run build"
   },
-  "proxy": "http://localhost:5000",
-  "eslintConfig": {
-    "extends": "react-app"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/siliconsenthil/stock-market-simulator.git"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "keywords": [
+    "stock",
+    "india",
+    "fintech"
+  ],
+  "author": "MadhavanN",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/siliconsenthil/stock-market-simulator/issues"
+  },
+  "homepage": "https://github.com/siliconsenthil/stock-market-simulator#readme",
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "cookie-parser": "^1.4.4",
+    "express": "^4.17.1",
+    "express-session": "^1.16.2",
+    "jsonwebtoken": "^8.5.1",
+    "passport": "^0.4.0",
+    "passport-google-oauth": "^2.0.0",
+    "pg": "^7.11.0",
+    "pg-pool": "^2.0.6",
+    "react-bootstrap": "^1.0.0-beta.9",
+    "redux-thunk": "^2.3.0",
+    "request": "^2.88.0",
+    "sass": "^1.22.10"
   }
 }
