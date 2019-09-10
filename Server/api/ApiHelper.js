@@ -7,4 +7,7 @@ function getAuthToken(code) {
   return apiHandler.make_API_call(`https://slack.com/api/oauth.access?client_id=${clientID}&client_secret=${clientSecret}&code=${code}`)
 }
 
-module.exports = { getAuthToken };
+function getUserIdentity(token) {
+  return apiHandler.make_API_call(`https://slack.com/api/users.identity?token=${token}`);
+}
+module.exports = { getAuthToken, getUserIdentity };

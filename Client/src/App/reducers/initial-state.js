@@ -1,10 +1,7 @@
 export const initalAppState = {
-  allStocks: [
-    {
-      code: "ABC",
-      value: {
-        current: 99.99
-      }
-    }
-  ]
+  user: {
+    name: '',
+    photo: '',
+    showUser: false
+  }
 };

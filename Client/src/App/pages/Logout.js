@@ -2,14 +2,26 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 class Logout extends Component {
 
-  componentDidMount() {
-    fetch('api/logout').then(res => alert("Logged out"));
+  state = {
+    loggedOut: false
+  }
+  componentWillMount() {
+    fetch('api/logout').then(res => {
+      if (res.status === 200) {
+        this.setState({ loggedOut: true })
+      }
+    });
   }
   render() {
+    const { loggedOut } = this.state;
     return (
-      <div>
-        <Redirect exact from='/' to='/login' />
-      </div>)
+      <>
+        {loggedOut ?
+          <div>
+            <Redirect to='/login' />
+          </div> : <div />}
+      </>
+    )
   }
 }
 export default Logout;

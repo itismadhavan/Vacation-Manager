@@ -288,4 +288,181 @@ body {
   }
 }
 
+$mainColor : #9C27B0;
+
+
+//--------------------------
+// Menu Bar
+//--------------------------
+.menubar{
+  display: block;
+  height: 60px;
+  background-color: $mainColor;
+  box-shadow: 2px 5px 5px 0 rgba(0,0,0,.12);
+  text-align: center;
+}
+.menubar span{
+  display: inline-block;
+  position: absolute;
+  color: #ffffff;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: bold;
+  font-size: 2.5em;
+  line-height: 60px;
+}
+
+.menubar .links{
+  display: inline-block;
+  position: absolute;
+  color: #ffffff;
+  right:0%;
+  line-height: 40px;
+}
+//--------------------------
+// Hamburger Menu
+//--------------------------
+#hambmenu{
+  position: relative;
+  width: 30px;
+  height: 45px;
+  float: left;
+  transition: .5s ease-in-out;
+  cursor: pointer;
+  
+  & span{
+    position: absolute;
+    height: 5px;
+    width: 100%;
+    vertical-align: middle;
+    margin: 20px 0 0 15px;
+    background: white;
+    border-radius: 8px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: .25s ease-in-out;
+    //    padding: 
+  }
+}
+.hambclicker{
+  content: '';
+  height: 48px;
+  width: 55px;
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  cursor: pointer;
+  z-index: 9;
+}
+#hambmenu  span:nth-child(1){
+  top: 0px}
+#hambmenu  span:nth-child(2),#hambmenu  span:nth-child(3){
+  top: 10px}
+#hambmenu  span:nth-child(4){
+  top: 20px}
+#hambmenu.isopen span:nth-child(1){
+  top: 18px;
+  width: 0%;
+  left: 50%;
+  opacity: 0;}
+#hambmenu.isopen span:nth-child(2){
+  transform: rotate(45deg)}
+#hambmenu.isopen span:nth-child(3){
+  transform: rotate(-45deg)}
+#hambmenu.isopen span:nth-child(4){
+  top: 18px;
+  width: 0%;
+  left: 50%;
+  opacity: 0;
+}
+
+//--------------------------
+// Slide In Menu
+//--------------------------
+#menu{
+  box-shadow:  4px 0 5px -2px #888;
+  position: absolute;
+  height: calc(100vh - 60px);
+  width: 210px;
+  background-color: white;
+  transform: translateX(-100%);
+  transition: transform 300ms;
+  & ul{
+    margin-top: 0px;
+    padding: 0px;
+    color: black;
+    list-style-type: none;
+    text-align: left;
+  & li{
+    padding: 30px 0 20px 20px;
+    font-size: 1.5em;
+    border-bottom: 1px solid rgba(0,0,0,.14);
+
+  & li:last-child{
+    border-bottom: none
+  }}}}
+.fa{
+  color: black;
+  padding-right: 8px;
+}
+li a{
+  text-decoration: none;
+  color: black;
+}
+
+#menu.isopen{
+  z-index: 1000;
+  transform: none;
+}
+.MuiRadio-colorSecondary{
+  padding: 5px !important;
+}
+.MuiFormControlLabel-label{
+  font-size: 15px !important;
+}
+
+.MuiRadio-colorSecondary.Mui-checked{
+  color: $mainColor !important;
+}
+
+.MuiTab-textColorSecondary.Mui-selected{
+  color: $mainColor !important;
+}
+.MuiTabs-indicator{
+  height: 4px !important;
+  background-color: $mainColor !important;
+}
+
+.MuiButtonBase-root {
+  outline: none !important;
+}
+
+.MuiDialogTitle-root{
+  background-color: $mainColor !important;
+  color: #ffffff;
+  padding: 5px 20px !important;
+}
+.MuiFab-secondary{
+  background-color: $mainColor !important;
+}
+.MuiSwitch-colorPrimary.Mui-checked + .MuiSwitch-track{
+  background-color: $mainColor !important;
+}
+.MuiSwitch-colorPrimary.Mui-checked{
+  color: $mainColor !important;
+}
+
+.MuiTableHead-root{
+  background-color: $mainColor;
+  & th{
+    color: #ffffff;
+  }
+}
+@media screen and (max-width: 420px){
+  .menubar span{
+    font-size: 1.2em;}}
+
+
+
 /* Loader symbol CSS clases- END */

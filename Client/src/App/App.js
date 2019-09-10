@@ -6,26 +6,10 @@ import Team from "./pages/Team";
 import Dashboard from "./components/dashboard";
 import Login from "./pages/Login";
 import Logout from "./pages/Logout";
+import Settings from "./pages/settings";
+import LeaveRequest from "./components/leaveRequest";
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      userLoggedIn: false
-    };
-  }
-
-  componentDidMount() {
-    this.getAuth();
-  }
-
-  getAuth() {
-    fetch("/api/authenticate").then(res => {
-      if (res.status === 200) {
-        this.setState({ userLoggedIn: true });
-      }
-    });
-  }
 
   render() {
     return (
@@ -37,6 +21,8 @@ class App extends Component {
           <Route path="/dashboard" component={Dashboard} />
           <Route path="/login" component={Login} />
           <Route path="/logout" component={Logout} />
+          <Route path="/settings" component={Settings} />
+          <Route path="/request-days-off" component={LeaveRequest} />
         </Switch>
       </>
     );

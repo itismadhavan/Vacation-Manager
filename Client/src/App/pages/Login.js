@@ -2,15 +2,16 @@ import React, { Component } from 'react';
 import OAuth from '../OAuth'
 import { Redirect } from 'react-router-dom';
 
-const providers = ['google']
 const redirectTo = '/home'
 
 class Login extends Component {
 
   state = {
-    userLoggedIn: false
+    userLoggedIn: false,
+    user: {}
   }
   componentDidMount() {
+    this.setState({ user: this.convertToObject(this.props.location.search) });
     this.getAuth();
   }
 
@@ -21,14 +22,24 @@ class Login extends Component {
       }
     });
   }
+  convertToObject(url) {
+    const arr = url.slice(1).split(/&|=/); // remove the "?", "&" and "="
+    let params = {};
+
+    for (let i = 0; i < arr.length; i += 2) {
+      const key = arr[i], value = arr[i + 1];
+      params[key] = value; // build the object = { limit: "10", page:"1", status:"APPROVED" }
+    }
+    return params;
+  }
 
   render() {
-    const { userLoggedIn } = this.state;
+    const { userLoggedIn, user } = this.state;
     return (
       <>
         {userLoggedIn ? <Redirect to={{
           pathname: redirectTo,
-          state: { showUser: true }
+          state: { showUser: true, user }
         }} /> :
           <div className="card white-square card-elevated">
             <div className="card-body soft-emboss" style={{ textAlign: "center" }}>

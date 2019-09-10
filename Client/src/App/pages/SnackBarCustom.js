@@ -24,6 +24,7 @@ class PositionedSnackbar extends React.Component {
   render() {
     const { vertical, horizontal, open } = this.state;
     const { name, photo } = this.props.user;
+    console.log(name);
     return (
       <Snackbar
         style={{ minWidth: 250 }}
@@ -41,7 +42,7 @@ class PositionedSnackbar extends React.Component {
             </IconButton>,
           ]}
           message={<div id="message-id">
-            <img style={{ width: 30, height: 30, marginRight: 10 }} src={photo} alt="" />
+            <img style={{ width: 30, height: 30, marginRight: 10 }} src={decodeURI(photo)} alt="" />
             Logged in as {name}
           </div>}>
         </SnackbarContent>

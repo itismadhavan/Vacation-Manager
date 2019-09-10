@@ -3,13 +3,8 @@ import * as actionTypes from "../actions/actionTypes"
 
 const reducers = (state = initalAppState, action) => {
   switch (action.type) {
-    case "FETCH_STOCKS": {
-      return {
-        ...state
-      };
-    }
-    case actionTypes.LOAD_STOCK_SEARCH_SUCCESS: {
-      return action.stockResults;
+    case actionTypes.USER_DETAIL: {
+      return { ...state.user, name: action.user.name, photo: action.user.photo, showUser: true }
     }
     default: {
       return {

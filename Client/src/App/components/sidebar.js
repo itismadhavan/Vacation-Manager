@@ -1,9 +1,6 @@
 import * as React from "react"
-import { connect } from "react-redux";
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
-import { loadStocksOnSearch } from "../actions/actions";
-
 
 class SideBarComponent extends React.Component {
   state = {
@@ -11,6 +8,7 @@ class SideBarComponent extends React.Component {
     loading: false
   }
 
+ 
   // handleClick = () => {
   //   const data = { exchange: "NSE", symbol: "ASHOKLEY" };
   //   var prop1 = "Meta Data";
@@ -32,7 +30,7 @@ class SideBarComponent extends React.Component {
       query: event.target.value
     }, () => {
       if (this.state.query && this.state.query.length > 1) {
-          this.props.loadStockSearch(this.state.query);
+        // this.props.loadStockSearch(this.state.query);
       }
     });
   }
@@ -46,29 +44,12 @@ class SideBarComponent extends React.Component {
               <input type="text" className="textbox" placeholder="Search" value={this.state.query} onChange={this.handleSearch} />
               <input title="Search" value="" type="submit" className="button" />
             </form>
-            <div className="result-card">
-              {this.props.stockResults.length}{this.state.query}
-              {this.props.stockResults.length > 0 ?
-                <ul>
-                  {this.props.stockResults && this.props.stockResults.map(r => {
-                    let prop1 = "1. symbol";
-                    let prop2 = "2. name"
-                    let item = { name: "", symbol: "" }
-                    let { [prop1]: symbol, [prop2]: name } = r;
-                    item.name = name;
-                    item.symbol = symbol;
-                    return (
-                      <li key={item.symbol} className="match">
-                        {item.name} || {item.symbol}
-                      </li>)
-                  })}
-                </ul> :
-                <div className="empty-state">
-                  <div>
-                    <h2> Nothing here</h2>
-                    <p>Use the search bar at the top to add some instruments</p>
-                  </div>
-                </div>}
+            <div id="calender" data-provide="calendar"></div>
+            <div className="empty-state">
+              <div>
+                <h2> Nothing here</h2>
+                <p>Use the search bar at the top to add some instruments</p>
+              </div>
             </div>
           </Paper>
         </Grid>
@@ -76,20 +57,18 @@ class SideBarComponent extends React.Component {
     )
   }
 }
-const mapStateToProps = state => {
-  return {
-    allStocks: state.allStocks,
-    stockResults: state
-  };
-};
+// const mapStateToProps = state => {
+//   return {
+//     allStocks: state.allStocks,
+//     stockResults: state
+//   };
+// };
 
-const mapDispatchToProps = dispatch => {
-  return {
-    fetchStocks: () => { dispatch({ type: "FETCH_STOCKS" }); },
-    loadStockSearch: (query) => { dispatch(loadStocksOnSearch(query)) }
-  };
-};
+// const mapDispatchToProps = dispatch => {
+//   return {
+//     fetchStocks: () => { dispatch({ type: "FETCH_STOCKS" }); },
+//     loadStockSearch: (query) => { dispatch(loadStocksOnSearch(query)) }
+//   };
+// };
 
-export default connect(mapStateToProps, mapDispatchToProps)(SideBarComponent);
-
-export { SideBarComponent };
+export default SideBarComponent;
