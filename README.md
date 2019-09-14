@@ -24,8 +24,8 @@ quite a extensive one:
 7. copy the forwading url from the command line
 8. navigate to "https://api.slack.com/apps" - login to 180bar40 workspace
 9. open "vacation manger" app from the list
-10.from the list of features in the  left side , choose "slash commnads"
-11.Choose edit and paste the copied url form step 7 save and exit
-12.from the list of features in the left side , chose "interactive components"
-13.enter "{URL form step}/slack/actions" in request url and save
-14."/vacation" in slack app should bring message from server
+10. from the list of features in the  left side , choose "slash commnads"
+11. Choose edit and paste the copied url form step 7 save and exit
+12. from the list of features in the left side , chose "interactive components"
+13. enter "{URL form step}/slack/actions" in request url and save
+14. "/vacation" in slack app should bring message from server
