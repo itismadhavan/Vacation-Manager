@@ -1,0 +1,17 @@
+{
+  "name": "vacation-manager-slack-app",
+  "version": "1.0.0",
+  "description": "slack app for vacation manger",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Madhavan Nagarajan",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "ngrok": "^3.2.5",
+    "redis": "^2.8.0"
+  }
+}
