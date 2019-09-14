@@ -1,14 +1,14 @@
 # Vacation-Manager
 
 To run the web client:
-1.Navigate to the client folder
-2.npm i - to install the packages
-3.npm start- to get the client running
+1. Navigate to the client folder
+2. npm i - to install the packages
+3. npm start- to get the client running
 
 To run the web server:
-1.navigate to server folder
-2.npm i - to install the packages
-3.npm start- to get the server running
+1. navigate to server folder
+2. npm i - to install the packages
+3. npm start- to get the server running
 
 
 To start the slack server:
