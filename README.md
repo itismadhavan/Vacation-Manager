@@ -12,7 +12,7 @@ To run the web server:
 
 
 To start the slack server:
-quite a extensive one:
+ 
 1. to make the server for slack running we need to expose the localhost to slack server
 2. https://dashboard.ngrok.com/get-started - navigate to this page (do sign up if needed)
 3. install ngrok in local
